@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <title>Hotel Management System</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-dark shadow">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold" href="#">
+                HMS
+            </a>
+
+            <button
+                id="logoutBtn"
+                class="btn btn-danger">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div class="container mt-5">
+
+
+        <h2 class="text-center mb-4">
+
+            Hotel Management Dashboard
+
+        </h2>
+
+
+
+        <!-- ================= DASHBOARD CARDS ================= -->
+
+        <div class="row g-4">
+
+
+            <!-- TOTAL ROOMS -->
+
+            <div class="col-md-3">
+
+                <div class="card shadow text-center">
+
+                    <div class="card-body">
+
+                        <h5>Total Rooms</h5>
+
+                        <h2 id="totalRooms">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AVAILABLE ROOMS -->
+
+            <div class="col-md-3">
+
+                <div class="card shadow text-center">
+
+                    <div class="card-body">
+
+                        <h5>Available Rooms</h5>
+
+                        <h2 id="availableRooms">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CHECKED IN -->
+
+            <div class="col-md-3">
+
+                <div class="card shadow text-center">
+
+                    <div class="card-body">
+
+                        <h5>Checked In</h5>
+
+                        <h2 id="checkedIn">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CHECKED OUT -->
+
+            <div class="col-md-3">
+
+                <div class="card shadow text-center">
+
+                    <div class="card-body">
+
+                        <h5>Checked Out</h5>
+
+                        <h2 id="checkedOut">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+<!-- ================= BILL DETAILS ================= -->
+
+<div class="card shadow mt-5">
+
+    <div class="card-body">
+
+        <h4 class="mb-4">
+            Bill Details
+        </h4>
+
+        <form id="billForm">
+
+            <div class="row g-3">
+
+                <!-- Room Number -->
+                <div class="col-md-4">
+
+                    <label class="form-label fw-bold">
+                        Room Number
+                    </label>
+
+                    <input
+                        type="number"
+                        id="billRoom"
+                        class="form-control"
+                        placeholder="Enter Room Number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Room Charge -->
+                <div class="col-md-4">
+
+                    <label class="form-label fw-bold">
+                        Room Charge / Day
+                    </label>
+
+                    <input
+                        type="number"
+                        id="roomCharge"
+                        class="form-control"
+                        placeholder="Enter Room Charge"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Number of Days -->
+                <div class="col-md-4">
+
+                    <label class="form-label fw-bold">
+                        Number of Days
+                    </label>
+
+                    <input
+                        type="number"
+                        id="numberOfDays"
+                        class="form-control"
+                        placeholder="Enter Days"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Food Charges -->
+                <div class="col-md-4">
+
+                    <label class="form-label fw-bold">
+                        Food / Extra Charges
+                    </label>
+
+                    <input
+                        type="number"
+                        id="foodCharges"
+                        class="form-control"
+                        placeholder="Food Charges"
+                        min="0"
+                        value="0"
+                    >
+
+                </div>
+
+
+                <!-- Tax -->
+                <div class="col-md-4">
+
+                    <label class="form-label fw-bold">
+                        Tax (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="tax"
+                        class="form-control"
+                        placeholder="Tax"
+                        min="0"
+                        value="0"
+                    >
+
+                </div>
+
+
+                <!-- Payment -->
+                <div class="col-md-4">
+
+                    <label class="form-label fw-bold">
+                        Payment Status
+                    </label>
+
+                    <select
+                        id="paymentStatus"
+                        class="form-control"
+                        required
+                    >
+
+                        <option value="">
+                            Select Payment Status
+                        </option>
+
+                        <option value="Paid">
+                            Paid
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Total -->
+
+            <div class="alert alert-info mt-4">
+
+                <h4>
+                    Total Bill:
+                    ₹<span id="totalBill">0</span>
+                </h4>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                Generate Bill
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+
+        <!-- ================= CUSTOMER MANAGEMENT ================= -->
+
+        <div class="card shadow mt-5">
+
+            <div class="card-body">
+
+
+                <h4 class="mb-4">
+
+                    Customer Management
+
+                </h4>
+
+
+                <div class="row g-4">
+
+
+                    <!-- CHECK IN -->
+
+                    <div class="col-md-6">
+
+                        <div class="border rounded p-4">
+
+                            <h5 class="mb-3">
+
+                                Customer Check-In
+
+                            </h5>
+
+
+                            
+<form id="checkInForm">
+
+    <!-- Customer Name -->
+    <input
+        type="text"
+        id="customerName"
+        class="form-control mb-3"
+        placeholder="Customer Name"
+        required
+    >
+
+
+    <!-- Mobile Number -->
+    <input
+        type="tel"
+        id="customerMobile"
+        class="form-control mb-3"
+        placeholder="Mobile Number"
+        maxlength="10"
+        required
+    >
+
+
+    <!-- Aadhaar / ID -->
+    <input
+        type="text"
+        id="customerId"
+        class="form-control mb-3"
+        placeholder="Aadhaar / ID Number"
+        required
+    >
+
+
+    <!-- Gender -->
+    <select
+        id="customerGender"
+        class="form-control mb-3"
+        required
+    >
+
+        <option value="">
+            Select Gender
+        </option>
+
+        <option value="Male">
+            Male
+        </option>
+
+        <option value="Female">
+            Female
+        </option>
+
+        <option value="Other">
+            Other
+        </option>
+
+    </select>
+
+
+    <!-- Number of Guests -->
+    <input
+        type="number"
+        id="numberOfGuests"
+        class="form-control mb-3"
+        placeholder="Number of Guests"
+        min="1"
+        required
+    >
+
+
+    <!-- Automatic Room Number -->
+    <div class="mb-3">
+
+        <label class="form-label fw-bold">
+            Room Number
+        </label>
+
+        <input
+            type="text"
+            id="roomNumber"
+            class="form-control"
+            readonly
+            placeholder="Room will be assigned automatically"
+        >
+
+    </div>
+
+
+    <!-- Check-In Button -->
+    <button
+        type="submit"
+        class="btn btn-primary w-100">
+
+        Check-In Customer
+
+    </button>
+
+</form>
+
+
+
+                                    Check-In Customer
+
+                                </button>
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CHECK OUT -->
+
+                    <div class="col-md-6">
+
+                        <div class="border rounded p-4">
+
+                            <h5 class="mb-3">
+
+                                Customer Check-Out
+
+                            </h5>
+
+
+                            <form id="checkOutForm">
+
+
+                                <input
+                                    type="number"
+                                    id="checkOutRoom"
+                                    class="form-control mb-3"
+                                    placeholder="Enter Room Number"
+                                    required
+                                >
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-success w-100">
+
+                                    Check-Out Customer
+
+                                </button>
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= CUSTOMER TABLE ================= -->
+
+        <div class="card shadow mt-5 mb-5">
+
+            <div class="card-body">
+
+
+                <h4 class="mb-4">
+
+
+
+
+
+                    Customer Details
+
+                </h4>
+
+
+                <div class="table-responsive">
+
+
+                    <table class="table table-bordered text-center">
+
+
+                        <thead class="table-dark">
+
+                            <tr>
+
+                                <th>
+                                    Customer Name
+                                </th>
+
+                                <th>
+                                    Mobile
+                                </th>
+
+                                <th>
+                                    Room No.
+                                </th>
+
+                                <th>
+                                    Check-In
+                                </th>
+
+                                <th>
+                                    Check-Out
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="customerTableBody">
+
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="../js/bootstrap.js"></script>
+
+    <script src="../js/sweetalert.js"></script>
+
+    <script src="../js/profile.js"></script>
+
+
+</body>
+
+</html>
+
