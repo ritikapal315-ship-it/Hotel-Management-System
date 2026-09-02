@@ -1,0 +1,79 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+/* Navbar */
+
+.navbar {
+    background-image: linear-gradient(#306f88, #6bb8e9);
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+
+/* Dashboard Cards */
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card h5 {
+    font-weight: bold;
+}
+
+.card h2 {
+    font-weight: bold;
+    color: #306f88;
+}
+
+
+/* Customer Management */
+
+.border {
+    border-color: #ddd !important;
+}
+
+.border h5 {
+    font-weight: bold;
+}
+
+
+/* Buttons */
+
+.btn {
+    border: none;
+}
+
+
+/* Customer Table */
+
+.table {
+    vertical-align: middle;
+}
+
+.table th {
+    font-weight: bold;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .container {
+        margin-top: 30px !important;
+    }
+
+}
