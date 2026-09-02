@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--start css link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"> 
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!--end css link-->
+    <!--start js link-->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/sweetalert.js"></script>
+    
+    <!--end js link-->
+    <title>Homepage</title>
+</head>
+<body>
+   <nav class="navbar navbar-expand-md bg-light shadow-lg fixed-top navbar-light"> 
+     <div class="container-fluid">
+        <img src="image/2.png" class="rounded-circle" width="60" alt="">
+        <a href="#" class=" mx-4 text-white navbar-brand">
+           HMS
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="myMenu">
+            <ul class="navbar-nav w-100 justify-content-end">
+            <li class="nav-item fw-bold text-white">
+                Just for code
+            </li>
+        </ul>
+        </div>
+        </div>
+     
+   </nav>
+   <br><br><br>
+   <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!--nav tab-->
+            <ul class="nav nav-tabs">
+                
+                <li class="nav-item" >
+                    <a href="#signup" class="nav-link " data-bs-toggle="tab"> 
+                        Sign Up
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Login" class="nav-link active" data-bs-toggle="tab"> 
+                       Login
+
+                    </a>
+                </li>
+            </ul>
+            <!-- nav panes-->
+             <div class="tab-content">
+                <div class="tab-pane  container mt-3" id="signup">
+                    <img src="image/signup (1).png" class="w-25" alt="">
+                    <form class="reg-form">
+                        <input required name="fullname" type="text" placeholder="Fullname" class="mb-3 form-control">
+                        <input required name="HotelName" type="text" placeholder="Hotel Name" class="mb-3 form-control">
+                        <input required name="totalRoom" type="number" placeholder="No of Hotels Room" class="mb-3 form-control">
+                        <input required name="mobile" type="number" placeholder="Mobile" class="mb-3 form-control">
+                        <input required name="email" type="Email" placeholder="Email" class="mb-3 form-control">
+                        <input required name="password" type="password" placeholder="Password" class="mb-3 form-control">
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+                <div class="tab-pane active container mt-3" id="Login">
+                    <!--<img src="C:\Users\kpal9\Downloads\signup (1).png" class="w-25" alt="">-->
+                    <form class="Login-form">
+
+                            <input type="Email" placeholder="Email" class="mb-3 form-control">
+                              <input type="password" placeholder="Password" class="mb-3 form-control">
+                              <button type="submit"class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+             </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center col-md-6 mt-5">
+            <img src="image/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg" class="w-100"alt="">
+        </div>
+
+    </div>
+   </div>
+   <!--start js link-->
+   <script src="js/index.js"></script>
+   <!--end js link-->
+</body>
+</html>
